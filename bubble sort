@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void bubbleSort(int vetor[], int tamanho) {
+void bubbleSort(int vetor[], int tamanho) { //Prototipação da função.
     int i, j, aux;
 
     // O primeiro loop controla quantas vezes vamos percorrer o vetor
@@ -9,7 +9,7 @@ void bubbleSort(int vetor[], int tamanho) {
         // O segundo loop compara os vizinhos (par a par)
         for (j = 0; j < tamanho - i - 1; j++) {
             
-            // Se o vizinho da esquerda for MAIOR que o da direita, trocamos!
+            // Se o vizinho da esquerda for MAIOR que o da direita, trocamos. Do contrário, mantemos como está, isso faz com que a ordenação pare e recomece várias vezes até ordenar tudo, é ineficiente, mas é simples.
             if (vetor[j] > vetor[j + 1]) {
                 
                 // Usamos a variável AUX para não perder o número na troca
@@ -25,7 +25,7 @@ int main() {
     int meuVetor[] = {50, 10, 40, 30, 20, 80,5,60,90,70}; //Determinando quais são os elementos do vetor, note que estão totalmente desordenados.
     int tam = 10;
 
-    bubbleSort(meuVetor, tam);
+    bubbleSort(meuVetor, tam); //Aqui nós invocamos a função e ela ordena os elementos do vetor em ordem crescente, mas poderia ser decrescente, é só trocar o símbolo "<" por ">".
 
     printf("Vetor ordenado: "); //Imprimindo os elementos do vetor depois de fazer a ordenação.
     for (int k = 0; k < tam; k++) {
